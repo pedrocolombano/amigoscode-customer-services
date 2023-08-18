@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1868b6b5-4ac7-49a5-aae9-73f42490d52a" name="Changes" comment="feat: project created">
-      <change afterPath="$PROJECT_DIR$/customer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/CustomerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer/src/main/resources/banner.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="1868b6b5-4ac7-49a5-aae9-73f42490d52a" name="Changes" comment="feat: create customer service">
+      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/dto/request/CustomerRegisterDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/resource/CustomerResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/src/main/java/com/amigoscode/customer/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -34,6 +41,9 @@
     </option>
     <option name="currentCommit" value="1" />
     <option name="onto" value="6af7d476e98c99724c0fc695cb9dbfce0776a07b" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,22 +61,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;793d8c49c570a39c58fc58bbf4997745&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Spring Boot.CustomerApplication">
+    <configuration name="PocTest.testEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="customer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.amigoscode.customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.amigoscode.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.amigoscode.customer.PocTest" />
+      <option name="METHOD_NAME" value="testEmptyList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="customer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.amigoscode.customer.CustomerApplication" />
@@ -80,9 +111,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CustomerApplication" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="JUnit.PocTest.testEmptyList" />
       </list>
     </recent_temporary>
   </component>
@@ -94,7 +140,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691778288860</updated>
-      <workItem from="1691778289680" duration="4580000" />
+      <workItem from="1691778289680" duration="6002000" />
+      <workItem from="1692285076694" duration="1892000" />
+      <workItem from="1692321797807" duration="1871000" />
     </task>
     <task id="LOCAL-00001" summary="feat: project created">
       <created>1691780638959</created>
@@ -117,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691781057399</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: create customer service">
+      <created>1691789982861</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691789982861</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: project created" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: project created" />
+    <MESSAGE value="feat: create customer service" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create customer service" />
   </component>
 </project>
